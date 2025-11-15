@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 7
+names: ['Bekas Jerawat', 'Blackhead', 'Nodule', 'Papules', 'Pori-Pori', 'Pustule', 'Whitehead']
+
+roboflow:
+  workspace: skripsijerawatviranti
+  project: acne_detection_2
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/skripsijerawatviranti/acne_detection_2/dataset/1
