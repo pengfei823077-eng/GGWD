@@ -65,35 +65,15 @@ We have prepared an acne dataset, and its URL is" url:  [ACNE dataset](https://u
 
 ### 2. Train the model
 ```
-train_results = model.train(
-    data="acnedata.yaml",  # path to dataset YAML
-    epochs=100,  # number of training epochs
-    imgsz=640,  # training image size
-    device="cpu",  # device to run on, i.e. device=0 or device=0,1,2,3 or device=cpu
-)
+python train.py --img 640 --adam --batch 4 --epochs 100 --data .acnedata.yaml --weights yolov11m.pt --hy data/hyps/hyp.yaml --cfg models/yolov11l-acne.yaml --name V11
 ```
 
 ### 3. Evaluate model performance on the validation set
 ```
-metrics = model.val()
+python val.py --weights ./weights/yolov11best.pt --img 640 --data .acnedata.yaml
 ```
 
-### 4. Perform object detection on an image
-```
-results = model("path/to/image.jpg")
-results[0].show()
-```
-
-### 5. Test the model
-```
-if __name__ == "__main__":
-    model = YOLO(r"best.pt") \
-    results = model.val(data=r'data.yaml',
-                           imgsz=640, split='test')
-```
-
-
-### 6. Results
+### 4. Results
 <details>
 <summary><strong>Comparison of detection performance</strong> (click to expand) </summary>
 <p align="center"><img src = "image/one stage.png"> </p>
