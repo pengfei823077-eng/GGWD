@@ -65,7 +65,10 @@ We have prepared an acne dataset, and its URL is" url:  [ACNE dataset](https://u
 
 ### 2. Train the model
 ```
-python train.py --img 640 --adam --batch 4 --epochs 100 --data .acnedata.yaml --weights yolov11m.pt --hy data/hyps/hyp.yaml --cfg models/yolov11l-acne.yaml --name V11
+-GGWD
+python train1.py --img 640 --adam --batch 4 --epochs 100 --data .acnedata.yaml --weights yolov11m.pt --hy data/hyps/hyp.yaml --cfg models/yolov11l-acne.yaml --name V11
+-SBCE
+python train2.py --img 640 --adam --batch 4 --epochs 100 --data .acnedatyaml --weights yolov11m.pt --hy data/hyps/hyp.yaml --cfg models/yolov11l-acne.yaml --name V11
 ```
 
 ### 3. Evaluate model performance on the validation set
